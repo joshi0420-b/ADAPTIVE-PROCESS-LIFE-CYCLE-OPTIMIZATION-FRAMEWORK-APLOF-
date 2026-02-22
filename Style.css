@@ -1,1 +1,262 @@
+// This file contain Style of Project :- 
 
+       /* Define CSS Variables for Theming */
+
+        
+        :root {
+            --color-primary: #f63bb2; /* Blue */
+            --color-secondary: #10b981; /* Emerald */
+            --color-overhead: #ef4444; /* Red for context switch */
+            --color-bg: #f9fafb;        /* Light Gray */
+            --color-card-bg: #ffffff;   /* White */
+            --color-text: #954b4b;
+            --color-text-subtle: #5a0b4b;
+            --color-best-bg: #a6f0bf; /* Light Green for recommendation */
+            --color-best-text: #011006; /* Dark Green */
+            --font-family: 'Inter', sans-serif;
+            --bar-height-process: 2.5rem;
+            --bar-height-cs: 1.5rem;
+        }
+
+        /* --- Global and Base Styles --- */
+        body {
+           background-color: rgb(201, 205, 248);
+            
+            min-height: 100vh;
+            padding: 1rem 1rem 2rem 1rem;
+            font-family: var(--font-family);
+            color: var(--color-text);
+        }
+        @media (min-width: 768px) {
+            body { padding: 2rem; }
+        }
+
+        .container {
+            max-width: 75rem; 
+            margin: 0 auto; 
+        }
+        
+        /* --- Header Styles --- */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+        .subtitle {
+            color: var(--color-text-subtle);
+            font-size: 1.125rem;
+        }
+
+        /* --- Panel & Card Styles --- */
+        .panel {
+            background-color: var(--color-card-bg);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        .panel h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--color-bg);
+            padding-bottom: 0.5rem;
+        }
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+            transition: border-color 0.2s;
+            resize: vertical;
+        }
+        .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        /* --- Buttons --- */
+        .primary-btn {
+            background-color: var(--color-primary);
+            color: white;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+        .primary-btn:hover {
+            background-color: #cf09d9;
+            transform: translateY(-1px);
+        }
+
+        /* --- Table and Results --- */
+        .data-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .data-table th, .data-table td {
+            padding: 0.75rem 0.5rem; 
+            text-align: left;
+            border-bottom: 1px solid #f3f4f6;
+            vertical-align: top;
+        }
+        .data-table th {
+            background-color: #f3f4f6;
+            font-weight: 700;
+            color: var(--color-text);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        .summary-metric {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+        }
+
+        /* --- Recommendation Block --- */
+        #recommendation-box {
+            background-color: var(--color-best-bg);
+            color: var(--color-best-text);
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            border: 2px solid var(--color-secondary);
+        }
+        #recommendation-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        #best-algorithm {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0a4184; /* Even darker green */
+        }
+        #comparison-table-container {
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        .comparison-table td {
+            padding: 0.5rem;
+            font-size: 0.875rem;
+        }
+        .comparison-table .best-metric {
+            font-weight: 700;
+            color: #065f46;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f0fdf4;
+        }
+
+
+        /* --- Gantt Chart Visualization --- */
+        .gantt-chart-container {
+            display: flex; 
+            overflow-x: auto;
+            padding: 1rem 0;
+            border-radius: 0.5rem;
+            background-color: #ecedac; 
+            height: 4.5rem; 
+            align-items: flex-end; 
+            position: relative; 
+        }
+        .gantt-bar {
+            height: var(--bar-height-process);
+            line-height: var(--bar-height-process);
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 0.25rem;
+            margin-right: 0.1rem;
+            opacity: 0.95;
+            position: relative;
+            font-size: 0.75rem;
+            cursor: default;
+            user-select: none;
+            min-width: 10px; 
+            flex-shrink: 0; 
+        }
+        
+        /* Idle time visualization */
+        .gantt-idle {
+            background-color: #9ca3af; 
+            color: #4b5563;
+            line-height: var(--bar-height-process);
+        }
+        
+        /* Context Switch (Overhead) visualization */
+        .gantt-context-switch {
+            background-color: var(--color-overhead); 
+            color: white;
+            height: var(--bar-height-cs); 
+            line-height: var(--bar-height-cs);
+            opacity: 0.9;
+            min-width: 5px; 
+            margin-right: 0.1rem; 
+            margin-left: -1px; 
+            border-radius: 0.15rem;
+        }
+
+        .gantt-time-label {
+            position: absolute;
+            top: 100%;
+            font-size: 0.75rem;
+            color: var(--color-text);
+            line-height: 1.5rem;
+            transform: translateX(-50%); 
+        }
+        
+        /* Color Mapping for up to 8 PIDs */
+        .gantt-bar-color-0 { background-color: #4f46e5; } /* Indigo */
+        .gantt-bar-color-1 { background-color: #f97316; } /* Orange */
+        .gantt-bar-color-2 { background-color: #0d9488; } /* Teal */
+        .gantt-bar-color-3 { background-color: #6d28d9; } /* Violet */
+        .gantt-bar-color-4 { background-color: #f43f5e; } /* Rose */
+        .gantt-bar-color-5 { background-color: #84cc16; } /* Lime */
+        .gantt-bar-color-6 { background-color: #1e3a8a; } /* Dark Blue */
+        .gantt-bar-color-7 { background-color: #ca8a04; } /* Yellow */
+
+
+        .flex-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .grid-controls {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .grid-controls {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+             .grid-controls {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .hidden { display: none; }
+    
