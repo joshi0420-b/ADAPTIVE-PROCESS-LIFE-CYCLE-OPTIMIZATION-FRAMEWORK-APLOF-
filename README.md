@@ -57,6 +57,8 @@ SRTF is a pre-emptive algorithm. At the arrival of every process, the short term
 
     Open the visualizer in your web browser.
     Select an algorithm from the dropdown menu.
+    And also check the Context Switch.
     Add processes with their arrival times, burst times, and priorities.
     Click "Run" to visualize the algorithm's execution.
+    
 
